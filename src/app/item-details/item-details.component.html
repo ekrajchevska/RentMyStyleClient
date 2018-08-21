@@ -14,18 +14,22 @@
 
 <div *ngIf="item && owner" id="item">
 
-  <div id="item_image"><img src="http://localhost:8080/api/files/{{item.image}}"></div>
+  <div id="item_img">
+    <img src="http://localhost:8080/api/files/{{item.image}}">
+  </div>
 
+  <div id="item_details">
+    <ul>
+      <li><span id="item_name">{{item.name}}</span></li>
+      <li class="margin_describe"><span class="describe_li">Brand:</span><span class="item_detail">{{item.brand}}</span></li>
+      <li class="margin_describe"><span class="describe_li">Color:</span><span class="item_detail">{{item.color}}</span></li>
+      <li class="margin_describe"><span class="describe_li">Price:</span><span class="item_detail">{{item.price}}</span></li>
+      <li class="margin_describe"><span class="describe_li">Size:</span><span class="item_detail">{{item.size}}</span></li>
+    </ul>
 
-  <ul id="item_details_list">
-    <li><span id="item_name">{{item.name}}</span></li>
-    <li class="margin_describe"><span class="describe_li">Brand:</span><span class="item_detail">{{item.brand}}</span></li>
-    <li class="margin_describe"><span class="describe_li">Color:</span><span class="item_detail">{{item.color}}</span></li>
-    <li class="margin_describe"><span class="describe_li">Price:</span><span class="item_detail">{{item.price}}</span></li>
-    <li class="margin_describe"><span class="describe_li">Size:</span><span class="item_detail">{{item.size}}</span></li>
-  </ul>
+    <button id="get_item" class="btn btn-info" (click)="getThisItem()">Get this item</button>
+    <button class="btn btn-primary owner"  (click)="goToReviewView()">View owner details</button>
+  </div>
 
-
-  <a class="btn btn-primary owner"  (click)="goToReviewView()">View owner details</a>
-  <button id="get_item" class="btn btn-primary" (click)="getThisItem()">Get this item!</button>
 </div>
+

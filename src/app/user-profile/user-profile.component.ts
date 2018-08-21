@@ -4,8 +4,7 @@ import {UsersService} from '../users.service';
 import {Login} from '../login';
 import {LoginsService} from '../logins.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Item} from '../item';
-import {Observable} from 'rxjs';
+
 
 @Component({
   selector: 'app-user-profile',

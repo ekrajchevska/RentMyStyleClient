@@ -16,6 +16,7 @@ export class UserDetailsComponent implements OnInit {
   login: Login;
   user: User;
   userToReview: User;
+  authorsNames: string[] = [];
 
   httpOptionsJson = {
     headers: new HttpHeaders({
@@ -32,6 +33,10 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit() {
     this.getLogin();
     this.getUserToReview();
+
+    for(let i=0; i<this.userToReview.reviews.length; i++){
+      this.authorsNames[i] = this.getUserWithId(this.userToReview.reviews[i].author);
+    }
   }
 
   getLogin() {
@@ -39,6 +44,12 @@ export class UserDetailsComponent implements OnInit {
       this.login = res;
       this.getUser();
     });
+  }
+
+  getUserWithId(id: string) {
+    let u = null;
+    this.usersService.getUser(id).subscribe(res => u = res);
+    return u.name;
   }
 
   getUser() {

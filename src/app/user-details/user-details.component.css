@@ -1,3 +1,7 @@
+p{
+  margin: 0;
+}
+
 #user_details{
   position: absolute;
   top: 10rem;
@@ -13,7 +17,11 @@
 .info{
   font-family: 'Poiret One', cursive;
 }
-
+.title{
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5em;
+}
 #username{
   margin-left: 2rem;
   font-family: 'Didact Gothic', sans-serif;
@@ -42,6 +50,34 @@
 #userlink:hover{
   opacity: 0.7;
 }
+
+#reviews ul{
+  padding: 0;
+  margin: 0;
+}
+
+#reviews ul li{
+  list-style-type: none;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  background-color: #ffeffa;
+}
+
+.author{
+  font-family: 'Didact Gothic', sans-serif;
+  text-align: right;
+  font-size: 0.7em;
+  color: gray;
+}
+
+.review-content{
+  font-family: 'Poiret One', cursive;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
 
 
 
@@ -124,3 +160,4 @@
   text-decoration: none;
   cursor: pointer;
 }
+
