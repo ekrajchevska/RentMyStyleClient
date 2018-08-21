@@ -1,0 +1,126 @@
+#user_details{
+  position: absolute;
+  top: 10rem;
+  left: 10rem;
+  width: 55%;
+  font-size: 2rem;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 3rem;
+}
+
+.info{
+  font-family: 'Poiret One', cursive;
+}
+
+#username{
+  margin-left: 2rem;
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+#toLogOut{
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  transition: 0.3s;
+}
+
+#toLogOut span{
+  padding-right: 1rem;
+}
+
+#toLogOut span:hover{
+  opacity: 0.7;
+}
+
+#userlink{
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#userlink:hover{
+  opacity: 0.7;
+}
+
+
+
+/* FORM STYLING */
+#reviewTitle{
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+
+}
+
+.open-button {
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  display: block;
+  float: right;
+  border-radius: 10px;
+}
+
+.form-popup {
+  font-family: 'Didact Gothic', sans-serif;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.form-popup label{
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+}
+
+.form-popup textarea{
+  display: block;
+  padding: .5rem;
+  background: transparent;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #cdcdcd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.form-popup form {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  border-radius: 7px;
+}
+
+.form-popup button{
+  display: block;
+  width: 100%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

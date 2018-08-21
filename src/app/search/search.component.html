@@ -1,0 +1,14 @@
+<div *ngIf="login" id="user_details">
+  <div>
+    <div id="items">
+      <span class="info">Items: </span>
+      <ul *ngIf="items.length">
+        <li *ngFor="let item of items">
+          <a routerLink="/item-details/{{item.id}}">
+            <img src="/api/files/{{item.image}}">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

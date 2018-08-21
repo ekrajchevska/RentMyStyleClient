@@ -1,0 +1,31 @@
+<div id="container"></div>
+
+<a href="/home">
+  <div id="logo_container">
+    <img src="fashion_icon.png" height="50px" width="50px">
+    <span>Trade my style</span>
+  </div>
+</a>
+
+<div *ngIf="login" id="toLogOut">
+  <a href="/user-profile" id="username"><span>{{login.name}}</span></a>
+  <a class="btn btn-primary" href="http://localhost:8080/logout">Log out</a>
+</div>
+
+<div *ngIf="item && owner" id="item">
+
+  <div id="item_image"><img src="http://localhost:8080/api/files/{{item.image}}"></div>
+
+
+  <ul id="item_details_list">
+    <li><span id="item_name">{{item.name}}</span></li>
+    <li class="margin_describe"><span class="describe_li">Brand:</span><span class="item_detail">{{item.brand}}</span></li>
+    <li class="margin_describe"><span class="describe_li">Color:</span><span class="item_detail">{{item.color}}</span></li>
+    <li class="margin_describe"><span class="describe_li">Price:</span><span class="item_detail">{{item.price}}</span></li>
+    <li class="margin_describe"><span class="describe_li">Size:</span><span class="item_detail">{{item.size}}</span></li>
+  </ul>
+
+
+  <a class="btn btn-primary owner"  (click)="goToReviewView()">View owner details</a>
+  <button id="get_item" class="btn btn-primary" (click)="getThisItem()">Get this item!</button>
+</div>

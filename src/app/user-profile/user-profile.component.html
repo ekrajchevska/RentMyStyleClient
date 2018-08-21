@@ -1,0 +1,68 @@
+<div id="container"></div>
+
+<a href="/home">
+  <div id="logo_container">
+    <img src="fashion_icon.png" height="50px" width="50px">
+    <span>Trade my style</span>
+  </div>
+</a>
+
+<div *ngIf="login" id="user_details">
+  <div>
+    <button class="open-button btn btn-primary" (click)="openForm()">Add new item</button>
+    <span class="info">Username: </span> <span id="username">{{login.name}}</span>
+
+    <div *ngIf="user" id="items">
+      <span class="info">Items: </span>
+      <ul *ngIf="user.items.length">
+        <li *ngFor="let item of user.items">
+          <a routerLink="/item-details/{{item.id}}">
+            <img  src="/api/files/{{item.image}}">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="login" id="toLogOut">
+  <a href="/user-profile" id="userlink"><span>{{login.name}}</span></a>
+  <a class="btn btn-primary" href="http://localhost:8080/logout">Log out</a>
+</div>
+
+
+<div id="uploadFile" class="form-popup">
+  <form method="POST" enctype="multipart/form-data" action="api/file">
+    <p class="close" (click)="closeForm()">&times;</p>
+    <p id="formTitle">Fill item details</p>
+    <hr>
+    <label>Name
+      <input #itemName id="item-name" type="text" name="name" placeholder="Name" required>
+    </label>
+    <label>Brand
+      <input #itemBrand id="item-brand" type="text" name="brand" placeholder="Brand" required>
+    </label>
+    <label>Color
+      <input #itemColor id="item-color" type="text" name="color" placeholder="Color" required>
+    </label>
+    <label>Price
+      <input #itemPrice id="item-price" type="number" name="price" placeholder="Price in MKD" required>
+    </label>
+    <label>Size
+      <select #itemSize name="size">
+        <option>XS</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select></label>
+    <label>Insert photo
+      <input type="file" title="item-photo" name="file" #itemPhoto>
+    </label>
+
+    <button class="btn btn-primary" (click)="addItem(itemName.value, itemBrand.value,
+   itemColor.value, itemPrice.value, itemSize.value, itemPhoto.value)">Add</button>
+  </form>
+</div>
+

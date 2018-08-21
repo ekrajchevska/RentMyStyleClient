@@ -1,0 +1,96 @@
+#item{
+  position: absolute;
+  color:  #737373;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  top: 10%;
+  left: 4%;
+  width: 50%;
+  height: 73%;
+  font-size: 1.5em;
+}
+
+#item_image{
+  display: inline;
+  position: absolute;
+  margin-top: 4%;
+  left: 4%;
+}
+
+#item_image img{
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  max-width: 50%;
+  max-height: 70%;
+}
+
+#item_details_list{
+  position: absolute;
+  margin-top: 4%;
+  margin-left: 37%;
+  list-style-type: none;
+}
+
+#item_details_list li{
+  margin-left: 16rem;
+}
+
+.margin_describe{
+  margin-top: 6rem;
+}
+
+.item_detail{
+  margin-left: 2rem;
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+
+#item_name{
+  font-size: 1.4em;
+  font-family: 'Poiret One', cursive;
+}
+
+.describe_li{
+  font-size: 1.1em;
+  font-family: 'Poiret One', cursive;
+}
+
+.owner{
+  transition: 0.3s;
+  font-size: 1em;
+  font-family: 'Didact Gothic', sans-serif;
+  position: absolute;
+  top: 50rem;
+  left: 52rem;
+}
+
+.owner:hover{
+  opacity: 0.7;
+}
+
+#toLogOut{
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  transition: 0.3s;
+}
+
+#toLogOut span{
+  padding-right: 1rem;
+}
+
+#toLogOut span:hover{
+  opacity: 0.7;
+}
+
+#get_item{
+  top: 55.5rem;
+  left: 18rem;
+  position: absolute;
+  transition: 0.3s;
+}
+
+#get_item:hover{
+  opacity: 0.7;
+}

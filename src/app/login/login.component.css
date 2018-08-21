@@ -1,0 +1,69 @@
+.login-form {
+  position: absolute;
+  top: 11rem;
+  left: 30rem;
+  width: 42rem;
+  margin: 0 auto;
+}
+.login-form form {
+  color: #999;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 5rem;
+  position: relative;
+}
+
+.login-form h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #454959;
+  margin: 2rem 0 3rem 0;
+  font-family: "Poiret One", "sans-serif";
+}
+
+.login-form .btn {
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.4s;
+  line-height: normal;
+  border: none;
+}
+
+.login-form a {
+  font-family: "Didact Gothic", "sans-serif";
+  text-decoration: underline;
+  width: 23rem;
+}
+.login-form form a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: 0.3s;
+}
+
+.login-form form a:hover{
+  opacity: 0.7;
+  margin-left: 0.3rem;
+}
+
+.social-btn .btn {
+  margin-bottom: 1.7rem;
+  font-size: 1em;
+  text-align: left;
+}
+.social-btn .btn:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.fa-facebook-f{
+  padding-right: 0.8em;
+}
+.fa-github{
+padding-right: 0.7em;
+}
+.gh{
+  background-color: black;
+}

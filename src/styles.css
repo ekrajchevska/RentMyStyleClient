@@ -1,0 +1,37 @@
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
+
+#logo_container{
+  position: absolute;
+  top: 0;
+  margin: 1%;
+  width: 15%;
+  transition: 0.3s;
+}
+
+#logo_container:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#logo_container span{
+  font-family: 'Poiret One', cursive;
+  color: black;
+  font-size: 1.4em;
+  margin-left: 5%;
+}
+
+#container {
+  color: #fff;
+  background-image: url("../images/fashion_background.jpg");
+  height: 82rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+  min-height: 100%;
+}
+

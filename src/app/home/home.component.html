@@ -1,0 +1,34 @@
+<div id="header"></div>
+
+<h1 id="title">Swap your clothes and accessories online for free</h1>
+
+<div id="center_of_image">
+  <div>Trade my style  is the easiest way to swap your clothes, make new friends, and help the environment.
+    Join our online clothing swap party and exchange your wardrobe today. Trading clothes has never been easier.</div>
+  <a class="btn btn-primary" (click)="goToSearchView()">Start swapping for free</a>
+</div>
+
+<a href="/home">
+  <div id="logo_container">
+    <img src="fashion_icon.png" height="50px" width="50px">
+    <span>Trade my style</span>
+  </div>
+</a>
+
+<div *ngIf="!login" id="toLogIn">
+  <a class="btn btn-primary" (click)="goToSearchView()">Log in</a>
+</div>
+
+
+<div *ngIf="login" id="toLogOut">
+  <a href="/user-profile" id="username"><span>{{login.name}}</span></a>
+  <a class="btn btn-primary" href="http://localhost:8080/logout">Log out</a>
+</div>
+
+<div id="items">
+  <a (click)="goToItemDetailsView(items[0].id)" *ngIf="items[0]"><img src="http://localhost:8080/api/files/{{items[0].image}}"></a>
+  <a (click)="goToItemDetailsView(items[1].id)" *ngIf="items[1]"><img src="http://localhost:8080/api/files/{{items[1].image}}"></a>
+  <a (click)="goToItemDetailsView(items[2].id)" *ngIf="items[2]"><img src="http://localhost:8080/api/files/{{items[2].image}}"></a>
+  <a (click)="goToItemDetailsView(items[3].id)" *ngIf="items[3]"><img src="http://localhost:8080/api/files/{{items[3].image}}"></a>
+</div>
+

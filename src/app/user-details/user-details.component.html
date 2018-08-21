@@ -1,0 +1,49 @@
+<div id="container"></div>
+
+<a href="/home">
+  <div id="logo_container">
+    <img src="fashion_icon.png" height="50px" width="50px">
+    <span>Trade my style</span>
+  </div>
+</a>
+
+<div *ngIf="login" id="user_details">
+  <div>
+    <button class="open-button btn btn-primary" (click)="openForm()">Add review</button>
+    <span class="info">User: </span> <span id="username">{{userToReview.name}}</span>
+    <h3 class="info">Reviews </h3><hr>
+
+    <div *ngIf="userToReview" id="reviews">
+      <ul *ngIf="userToReview.reviews.length">
+        <li *ngFor="let review of userToReview.reviews">
+         <p>{{review.description}}</p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="login" id="toLogOut">
+  <a href="/user-profile" id="userlink"><span>{{login.name}}</span></a>
+  <a class="btn btn-primary" href="http://localhost:8080/logout">Log out</a>
+</div>
+
+
+
+
+<div id="uploadReview" class="form-popup">
+  <form>
+    <p class="close" (click)="closeForm()">&times;</p>
+    <p id="reviewTitle">Write a review for this user</p>
+    <hr>
+    <label>Comment
+      <textarea rows="7" #userReview id="user-review" type="text" name="review"
+                placeholder="Describe your trading experience with this user.." required></textarea>
+    </label>
+
+    <button class="btn btn-primary" (click)="addReview(userReview.value)">Add</button>
+  </form>
+</div>
+
+
