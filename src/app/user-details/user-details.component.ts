@@ -33,10 +33,6 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit() {
     this.getLogin();
     this.getUserToReview();
-
-    for(let i=0; i<this.userToReview.reviews.length; i++){
-      this.authorsNames[i] = this.getUserWithId(this.userToReview.reviews[i].author);
-    }
   }
 
   getLogin() {
@@ -46,22 +42,25 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
-  getUserWithId(id: string) {
-    let u = null;
-    this.usersService.getUser(id).subscribe(res => u = res);
-    return u.name;
-  }
 
   getUser() {
     this.usersService.getUser(this.login.id).subscribe(res => this.user = res);
   }
 
   getUserToReview() {
-
+    console.log("getting userToReview..");
     this.route.paramMap.subscribe(result => {
       const id = result.get('id');
       this.usersService.getUser(id).subscribe(user => {
         this.userToReview = user;
+
+        for(let i in this.userToReview.reviews){
+          /* console.log("authors: "+ this.userToReview.reviews[i].author);*/
+          this.usersService.getUser(this.userToReview.reviews[i].author).subscribe(res=>{
+            this.userToReview.reviews[i].author = res.name;
+            console.log("i: "+i+", name: "+this.userToReview.reviews[i].author);
+          })
+        }
       });
     });
   }
@@ -75,7 +74,6 @@ export class UserDetailsComponent implements OnInit {
   }
 
   addReview(userReview: string) {
-    console.log('Review added!');
 
     if (userReview === undefined) {
       return;
@@ -88,6 +86,7 @@ export class UserDetailsComponent implements OnInit {
     };
 
     this.http.post('api/reviews/post', objBody, this.httpOptionsJson).subscribe();
+    console.log('Review added!');
 
   }
 

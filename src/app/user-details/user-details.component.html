@@ -16,7 +16,7 @@
     <div id="reviews">
       <ul *ngIf="userToReview.reviews.length">
         <li *ngFor="let review of userToReview.reviews">
-          <!--<p *ngFor="let author of authorsNames" class="author">{{author}}</p>-->
+          <p class="author">{{review.author}}</p>
           <p class="review-content">{{review.description}}</p>
         </li>
       </ul>
