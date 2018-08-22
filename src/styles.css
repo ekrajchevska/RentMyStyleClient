@@ -35,3 +35,18 @@ html, body{
   min-height: 100%;
 }
 
+
+#toLogOut{
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  transition: 0.3s;
+}
+
+#toLogOut span{
+  padding-right: 1rem;
+}
+
+#toLogOut span:hover{
+  opacity: 0.7;
+}

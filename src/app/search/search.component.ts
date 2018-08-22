@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.getLogin();
-    this.getItems();
+    this.getAllItems();
   }
 
 
@@ -27,8 +27,30 @@ export class SearchComponent implements OnInit {
     this.loginsService.getLogin().subscribe(result => this.login = result);
   }
 
-  getItems() {
-    //  this is the way all work, except that price is NUMBER !!!
-    this.itemsService.getItemsBySize('M').subscribe(result => this.items = result);
+  getAllItems() {
+    this.itemsService.getItems().subscribe(res=> this.items = res);
   }
+
+  getItemsByName(name: string){
+    this.itemsService.getItemsByName(name).subscribe(res=> this.items = res);
+  }
+
+  getItemsByBrand(brand: string){
+    this.itemsService.getItemsByBrand(brand).subscribe(res=> this.items = res);
+  }
+
+  getItemsByColor(color: string){
+    this.itemsService.getItemsByColor(color).subscribe(res=> this.items = res);
+  }
+
+  getItemsBySize(size: string){
+    this.itemsService.getItemsBySize(size).subscribe(res=> this.items = res);
+  }
+
+  getItemsByPrice(price: number){
+    this.itemsService.getItemsByPrice(price).subscribe(res=> this.items = res);
+  }
+
+
+
 }

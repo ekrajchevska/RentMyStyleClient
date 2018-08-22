@@ -1,7 +1,57 @@
-<div *ngIf="login" id="user_details">
+
+<div id="container"></div>
+
+<a href="/home">
+  <div id="logo_container">
+    <img src="fashion_icon.png" height="50px" width="50px">
+    <span>Trade my style</span>
+  </div>
+</a>
+
+<div *ngIf="login" id="toLogOut">
+  <a href="/user-profile" id="username"><span>{{login.name}}</span></a>
+  <a class="btn btn-primary" href="http://localhost:8080/logout">Log out</a>
+</div>
+
+<div id="search_bar">
+  <p class="info">Browse items</p>
+
+  <label><i class="fas fa-search"></i> Search
+    <input type="text" #itemName (keyup)="getItemsByName(itemName.value)">
+  </label>
+  <label>Brand
+    <input type="text" #itemBrand (keyup)="getItemsByBrand(itemBrand.value)"
+           id="brand" name="brand" placeholder="Bershka, H&M, Zara..">
+  </label>
+  <label>Color<br>
+    <i (click)="getItemsByColor('red')" class="red fas fa-circle"></i>
+    <i (click)="getItemsByColor('navy')" class="navy fas fa-circle"></i>
+    <i (click)="getItemsByColor('yellow')" class="yellow fas fa-circle"></i>
+    <i (click)="getItemsByColor('white')" class="white fas fa-circle"></i>
+    <i (click)="getItemsByColor('blue')" class="blue fas fa-circle"></i>
+    <i (click)="getItemsByColor('green')" class="green fas fa-circle"></i>
+    <i (click)="getItemsByColor('orange')" class="orange fas fa-circle"></i>
+    <i (click)="getItemsByColor('brown')" class="brown fas fa-circle"></i>
+    <i (click)="getItemsByColor('purple')" class="purple fas fa-circle"></i>
+    <i (click)="getItemsByColor('black')" class="black fas fa-circle"></i>
+  </label>
+  <label>Size
+    <select #itemSize (click)="getItemsBySize(itemSize.value)" id="size" name="size">
+      <option>XS</option>
+      <option>S</option>
+      <option>M</option>
+      <option>L</option>
+      <option>XL</option>
+    </select> </label>
+  
+  <label>Price
+    <input type="number" name="price" #itemPrice (keyup)="getItemsByPrice(+itemPrice.value)">
+  </label>
+</div>
+
+<div *ngIf="login" id="search_results">
   <div>
     <div id="items">
-      <span class="info">Items: </span>
       <ul *ngIf="items.length">
         <li *ngFor="let item of items">
           <a routerLink="/item-details/{{item.id}}">

@@ -33,6 +33,10 @@ export class ItemsService {
     return this.http.get<Item[]>(`${this.urlItems}/all/price/${price}`);
   }
 
+  getItemsByName(name: string): Observable<Item[]> {
+    return this.http.get<Item[]>(`${this.urlItems}/all/search/${name}`);
+  }
+
   getItem(id: number): Observable<Item> {
     return this.http.get<Item>(`${this.urlItems}/${id}`);
   }
