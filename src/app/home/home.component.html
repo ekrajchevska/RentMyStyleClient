@@ -25,10 +25,19 @@
   <a class="btn btn-primary" href="http://localhost:8080/logout">Log out</a>
 </div>
 
+
+
+
+<h1 id="find">Find your next favorite piece of clothing. . .</h1>
+<div class="hr-theme-slash-2">
+  <div class="hr-line"></div>
+  <div class="hr-icon"><i class="fas fa-heart"></i></div>
+  <div class="hr-line"></div>
+</div>
+
 <div id="items">
   <a (click)="goToItemDetailsView(items[0].id)" *ngIf="items[0]"><img src="http://localhost:8080/api/files/{{items[0].image}}"></a>
   <a (click)="goToItemDetailsView(items[1].id)" *ngIf="items[1]"><img src="http://localhost:8080/api/files/{{items[1].image}}"></a>
   <a (click)="goToItemDetailsView(items[2].id)" *ngIf="items[2]"><img src="http://localhost:8080/api/files/{{items[2].image}}"></a>
   <a (click)="goToItemDetailsView(items[3].id)" *ngIf="items[3]"><img src="http://localhost:8080/api/files/{{items[3].image}}"></a>
 </div>
-
